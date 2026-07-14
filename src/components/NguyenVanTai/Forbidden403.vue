@@ -23,7 +23,7 @@
                     <div class="pt-lg flex flex-col sm:flex-row gap-md justify-center items-center">
                         <a class="group flex items-center justify-center gap-sm bg-primary text-on-primary font-label-md text-label-md px-2xl h-12 rounded-xl btn-shadow btn-hover transition-all duration-200 ease-in-out" href="/dashboard">
                             <span class="material-symbols-outlined">dashboard</span>
-                            Quay về Dashboard
+                            Quay về Trang chủ
                         </a>
                         <button class="flex items-center justify-center gap-sm border border-outline text-on-surface-variant font-label-md text-label-md px-2xl h-12 rounded-xl hover:bg-surface-container-low transition-all duration-200 ease-in-out">
                             <span class="material-symbols-outlined">contact_support</span>
@@ -34,7 +34,7 @@
                 <div class="mt-3xl flex items-center gap-md opacity-60">
                     <div class="h-[1px] w-8 bg-outline-variant">
                     </div>
-                    <span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">MotoStream Premium</span>
+                    <span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">MotoRent Pro</span>
                     <div class="h-[1px] w-8 bg-outline-variant">
                     </div>
                 </div>
@@ -42,7 +42,7 @@
         </main>
         <footer class="fixed bottom-0 left-0 w-full px-margin-desktop py-lg flex justify-center items-center opacity-60">
             <p class="font-label-sm text-label-sm text-on-surface-variant">
-                © 2026 MotoStream Mobility. All rights reserved.
+                © 2026 MotoRent Pro. Bảo lưu mọi quyền.
             </p>
         </footer>
     </div>

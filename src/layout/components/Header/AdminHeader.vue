@@ -20,8 +20,8 @@
                 </div>
                 <div class="flex items-center gap-md pl-xl border-l border-outline-variant">
                     <div class="text-right">
-                        <p class="font-label-md text-label-md text-on-surface">Admin Moto</p>
-                        <p class="text-[10px] text-outline-variant font-bold uppercase tracking-widest">Super Admin</p>
+                        <p class="font-label-md text-label-md text-on-surface">Quản trị viên</p>
+                        <p class="text-[10px] text-outline-variant font-bold uppercase tracking-widest">Quản trị</p>
                     </div>
                     <div class="w-10 h-10 rounded-full border-2 border-primary/20 bg-surface-container-highest flex items-center justify-center overflow-hidden">
                         <img class="w-full h-full object-cover" data-alt="Professional studio headshot of a young male administrator in business casual attire with a clean, blurred office background. The lighting is soft and corporate, perfectly matching a high-end dashboard interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1iW2957LGCZcRIPWZVHuvd8DjoosN8-l-i-zVrIZi60hUdbIgoCJnqz7XhbAYjZuh0EWdxkhpWvh_1vzhL-7zPpF-nDccJnXKOZmBYLl2lo4cOpHQcE21WIhxm-XrhAyIgf5feKQ__zg361iL4NkifQYX1EYlXwycsfIq1A-qu7wLAXlBfFVlJsSZqcYt8EMVwxyZ6pw7CL-xvyvyXnE5GBn1eAF05Uj1CzQCn1mOW93gjqJ7hGy2xBzcsANKU-QPx1Nn-gs9_tH-"/>

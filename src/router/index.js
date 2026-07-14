@@ -10,7 +10,7 @@ import Error404 from '../components/NguyenVanTai/Error404.vue';
 // DaoDuyHoangThinh components
 import DanhSachXe from '../components/DaoDuyHoangThinh/DanhSachXe.vue';
 import ChiTietXe from '../components/DaoDuyHoangThinh/ChiTietXe.vue';
-import DatThuXe from '../components/DaoDuyHoangThinh/DatThuXe.vue';
+import DatThuXe from '../components/DaoDuyHoangThinh/DatThueXe.vue';
 import PopupDanhGia from '../components/DaoDuyHoangThinh/PopupDanhGia.vue';
 import QuanLyDanhGia from '../components/DaoDuyHoangThinh/QuanLyDanhGia.vue';
 
@@ -22,7 +22,7 @@ import ThemDanhMuc from '../components/LeVanTrong/ThemDanhMuc.vue';
 import SuaDanhMuc from '../components/LeVanTrong/SuaDanhMuc.vue';
 
 // NguyenLeMinhTuan components
-import LichSuThuXe from '../components/NguyenLeMinhTuan/LichSuThuXe.vue';
+import LichSuThuXe from '../components/NguyenLeMinhTuan/LichSuThueXe.vue';
 import QuanLyDonThue from '../components/NguyenLeMinhTuan/QuanLyDonThue.vue';
 import ChiTietDonThue from '../components/NguyenLeMinhTuan/ChiTietDonThue.vue';
 import GiaoXe from '../components/NguyenLeMinhTuan/GiaoXe.vue';
@@ -33,6 +33,7 @@ import Dashboard from '../components/PhanThiPhuocHien/Dashboard.vue';
 import QuanLyKhachHang from '../components/PhanThiPhuocHien/QuanLyKhachHang.vue';
 import QuanLyXe from '../components/PhanThiPhuocHien/QuanLyXe.vue';
 import ThemXeMoi from '../components/PhanThiPhuocHien/ThemXeMoi.vue';
+import SuaXe from '../components/PhanThiPhuocHien/SuaXe.vue';
 
 const routes = [
     // --- Khách Vãng Lai & Khách Hàng (Default layout) ---
@@ -58,13 +59,13 @@ const routes = [
         path: '/login',
         name: 'Login',
         component: Login,
-        meta: { layout: 'default' }
+        meta: { layout: 'none' }
     },
     {
         path: '/register',
         name: 'Registration',
         component: Registration,
-        meta: { layout: 'default' }
+        meta: { layout: 'none' }
     },
     {
         path: '/403',
@@ -160,6 +161,12 @@ const routes = [
         path: '/admin/them-xe',
         name: 'ThemXeMoi',
         component: ThemXeMoi,
+        meta: { layout: 'admin' }
+    },
+    {
+        path: '/admin/sua-xe/:id',
+        name: 'SuaXe',
+        component: SuaXe,
         meta: { layout: 'admin' }
     },
     {

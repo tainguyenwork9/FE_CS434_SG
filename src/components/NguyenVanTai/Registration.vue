@@ -22,13 +22,22 @@
                     <p class="text-on-surface-variant font-body-md">Trở thành đối tác và quản lý đội xe của bạn chuyên nghiệp hơn.</p>
                 </div>
                 <!-- Form section -->
-                <form class="grid grid-cols-1 md:grid-cols-2 gap-lg" onsubmit="event.preventDefault();">
+                <div v-if="errorMessage" class="mb-lg p-md bg-red-100 text-red-700 rounded-xl flex items-center gap-sm text-body-md col-span-2">
+                    <span class="material-symbols-outlined">error</span>
+                    <span>{{ errorMessage }}</span>
+                </div>
+                <div v-if="successMessage" class="mb-lg p-md bg-green-100 text-green-700 rounded-xl flex items-center gap-sm text-body-md col-span-2">
+                    <span class="material-symbols-outlined">check_circle</span>
+                    <span>{{ successMessage }}</span>
+                </div>
+
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-lg" @submit.prevent="handleRegister">
                     <!-- Full Name -->
                     <div class="flex flex-col gap-xs">
                         <label class="text-label-sm font-label-sm text-on-surface-variant px-1">Họ tên</label>
                         <div class="relative group input-focus-ring rounded-[12px] transition-all">
                             <span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">person</span>
-                            <input class="w-full h-[48px] pl-11 pr-md bg-surface-container-lowest border border-outline-variant rounded-[12px] text-on-surface font-body-md focus:border-primary focus:ring-0 transition-all" placeholder="Nguyễn Văn A" type="text"/>
+                            <input v-model="form.ho_ten" required class="w-full h-[48px] pl-11 pr-md bg-surface-container-lowest border border-outline-variant rounded-[12px] text-on-surface font-body-md focus:border-primary focus:ring-0 transition-all" placeholder="Nguyễn Văn A" type="text"/>
                         </div>
                     </div>
                     <!-- Email -->
@@ -36,7 +45,7 @@
                         <label class="text-label-sm font-label-sm text-on-surface-variant px-1">Email</label>
                         <div class="relative group input-focus-ring rounded-[12px] transition-all">
                             <span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">mail</span>
-                            <input class="w-full h-[48px] pl-11 pr-md bg-surface-container-lowest border border-outline-variant rounded-[12px] text-on-surface font-body-md focus:border-primary focus:ring-0 transition-all" placeholder="example@gmail.com" type="email"/>
+                            <input v-model="form.email" required class="w-full h-[48px] pl-11 pr-md bg-surface-container-lowest border border-outline-variant rounded-[12px] text-on-surface font-body-md focus:border-primary focus:ring-0 transition-all" placeholder="example@gmail.com" type="email"/>
                         </div>
                     </div>
                     <!-- Phone Number -->
@@ -44,7 +53,7 @@
                         <label class="text-label-sm font-label-sm text-on-surface-variant px-1">Số điện thoại</label>
                         <div class="relative group input-focus-ring rounded-[12px] transition-all">
                             <span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">phone</span>
-                            <input class="w-full h-[48px] pl-11 pr-md bg-surface-container-lowest border border-outline-variant rounded-[12px] text-on-surface font-body-md focus:border-primary focus:ring-0 transition-all" placeholder="0901 234 567" type="tel"/>
+                            <input v-model="form.so_dien_thoai" required class="w-full h-[48px] pl-11 pr-md bg-surface-container-lowest border border-outline-variant rounded-[12px] text-on-surface font-body-md focus:border-primary focus:ring-0 transition-all" placeholder="0901 234 567" type="tel"/>
                         </div>
                     </div>
                     <!-- ID Number (CCCD) -->
@@ -52,7 +61,7 @@
                         <label class="text-label-sm font-label-sm text-on-surface-variant px-1">Số CCCD</label>
                         <div class="relative group input-focus-ring rounded-[12px] transition-all">
                             <span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">badge</span>
-                            <input class="w-full h-[48px] pl-11 pr-md bg-surface-container-lowest border border-outline-variant rounded-[12px] text-on-surface font-body-md focus:border-primary focus:ring-0 transition-all" placeholder="12 chữ số" type="text"/>
+                            <input v-model="form.cccd" required class="w-full h-[48px] pl-11 pr-md bg-surface-container-lowest border border-outline-variant rounded-[12px] text-on-surface font-body-md focus:border-primary focus:ring-0 transition-all" placeholder="12 chữ số" type="text"/>
                         </div>
                     </div>
                     <!-- Address (Full span) -->
@@ -60,7 +69,7 @@
                         <label class="text-label-sm font-label-sm text-on-surface-variant px-1">Địa chỉ</label>
                         <div class="relative group input-focus-ring rounded-[12px] transition-all">
                             <span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">location_on</span>
-                            <input class="w-full h-[48px] pl-11 pr-md bg-surface-container-lowest border border-outline-variant rounded-[12px] text-on-surface font-body-md focus:border-primary focus:ring-0 transition-all" placeholder="Số nhà, đường, phường/xã, quận/huyện..." type="text"/>
+                            <input v-model="form.dia_chi" required class="w-full h-[48px] pl-11 pr-md bg-surface-container-lowest border border-outline-variant rounded-[12px] text-on-surface font-body-md focus:border-primary focus:ring-0 transition-all" placeholder="Số nhà, đường, phường/xã, quận/huyện..." type="text"/>
                         </div>
                     </div>
                     <!-- Username -->
@@ -68,7 +77,7 @@
                         <label class="text-label-sm font-label-sm text-on-surface-variant px-1">Tên đăng nhập</label>
                         <div class="relative group input-focus-ring rounded-[12px] transition-all">
                             <span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">account_circle</span>
-                            <input class="w-full h-[48px] pl-11 pr-md bg-surface-container-lowest border border-outline-variant rounded-[12px] text-on-surface font-body-md focus:border-primary focus:ring-0 transition-all" placeholder="username123" type="text"/>
+                            <input v-model="form.ten_dang_nhap" required class="w-full h-[48px] pl-11 pr-md bg-surface-container-lowest border border-outline-variant rounded-[12px] text-on-surface font-body-md focus:border-primary focus:ring-0 transition-all" placeholder="username123" type="text"/>
                         </div>
                     </div>
                     <!-- Password -->
@@ -76,7 +85,7 @@
                         <label class="text-label-sm font-label-sm text-on-surface-variant px-1">Mật khẩu</label>
                         <div class="relative group input-focus-ring rounded-[12px] transition-all">
                             <span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">lock</span>
-                            <input class="w-full h-[48px] pl-11 pr-md bg-surface-container-lowest border border-outline-variant rounded-[12px] text-on-surface font-body-md focus:border-primary focus:ring-0 transition-all" placeholder="••••••••" type="password"/>
+                            <input v-model="form.mat_khau" required class="w-full h-[48px] pl-11 pr-md bg-surface-container-lowest border border-outline-variant rounded-[12px] text-on-surface font-body-md focus:border-primary focus:ring-0 transition-all" placeholder="••••••••" type="password"/>
                         </div>
                     </div>
                     <!-- Confirm Password -->
@@ -84,14 +93,17 @@
                         <label class="text-label-sm font-label-sm text-on-surface-variant px-1">Nhập lại mật khẩu</label>
                         <div class="relative group input-focus-ring rounded-[12px] transition-all">
                             <span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">lock_reset</span>
-                            <input class="w-full h-[48px] pl-11 pr-md bg-surface-container-lowest border border-outline-variant rounded-[12px] text-on-surface font-body-md focus:border-primary focus:ring-0 transition-all" placeholder="••••••••" type="password"/>
+                            <input v-model="form.mat_khau_confirmation" required class="w-full h-[48px] pl-11 pr-md bg-surface-container-lowest border border-outline-variant rounded-[12px] text-on-surface font-body-md focus:border-primary focus:ring-0 transition-all" placeholder="••••••••" type="password"/>
                         </div>
                     </div>
                     <!-- Action Button -->
                     <div class="md:col-span-2 mt-md">
-                        <button class="w-full h-[48px] bg-primary-container text-on-primary font-label-md rounded-[12px] shadow-lg shadow-primary-container/20 hover:bg-primary transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-sm">
-                            Đăng ký
-                            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                        <button :disabled="loading" class="w-full h-[48px] bg-primary-container text-on-primary font-label-md rounded-[12px] shadow-lg shadow-primary-container/20 hover:bg-primary transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-sm disabled:opacity-50" type="submit">
+                            <span v-if="loading">Đang đăng ký...</span>
+                            <span v-else class="flex items-center justify-center gap-sm">
+                                Đăng ký
+                                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                            </span>
                         </button>
                     </div>
                 </form>
@@ -99,7 +111,7 @@
                 <div class="text-center">
                     <p class="text-on-surface-variant text-body-md">
                         Đã có tài khoản?
-                        <a class="text-primary font-bold hover:underline ml-1" href="#">Đăng nhập</a>
+                        <router-link class="text-primary font-bold hover:underline ml-1" to="/login">Đăng nhập</router-link>
                     </p>
                 </div>
                 <!-- Terms -->
@@ -122,8 +134,55 @@
 </template>
 
 <script>
+import { api } from '../../services/api';
+
 export default {
     name: 'Registration',
+    data() {
+        return {
+            form: {
+                ho_ten: '',
+                email: '',
+                so_dien_thoai: '',
+                cccd: '',
+                dia_chi: '',
+                ten_dang_nhap: '',
+                mat_khau: '',
+                mat_khau_confirmation: ''
+            },
+            loading: false,
+            errorMessage: '',
+            successMessage: ''
+        };
+    },
+    methods: {
+        async handleRegister() {
+            if (this.form.mat_khau !== this.form.mat_khau_confirmation) {
+                this.errorMessage = 'Mật khẩu nhập lại không khớp.';
+                return;
+            }
+
+            this.loading = true;
+            this.errorMessage = '';
+            this.successMessage = '';
+
+            try {
+                const response = await api.post('/auth/register', this.form);
+                this.successMessage = 'Đăng ký thành công! Đang chuyển hướng sang trang chủ...';
+                
+                api.setToken(response.access_token);
+                api.setUser(response.user);
+
+                setTimeout(() => {
+                    this.$router.push('/');
+                }, 2000);
+            } catch (error) {
+                this.errorMessage = error.message || 'Đăng ký thất bại. Vui lòng kiểm tra lại thông tin.';
+            } finally {
+                this.loading = false;
+            }
+        }
+    },
     mounted() {
         // Micro-interaction for input group focus
         document.querySelectorAll('input').forEach(input => {
@@ -133,19 +192,6 @@ export default {
             input.addEventListener('blur', () => {
                 input.parentElement.classList.remove('shadow-md');
             });
-        });
-        
-        // Simple form animation on load
-        window.addEventListener('load', () => {
-            const card = document.querySelector('.glass-card');
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-        
-            setTimeout(() => {
-                card.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, 100);
         });
     }
 }

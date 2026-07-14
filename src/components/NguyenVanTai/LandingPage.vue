@@ -16,41 +16,12 @@
                         Hệ thống quản lý và cho thuê xe máy hàng đầu. Đa dạng dòng xe, thủ tục nhanh chóng, hành trình trọn vẹn. Khám phá ngay bộ sưu tập xe 2026 của chúng tôi.
                     </p>
                     <div class="pt-4">
-                        <button class="px-8 py-4 bg-primary text-on-primary rounded-xl font-label-md text-label-md shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 active:translate-y-0">
+                        <button @click="$router.push('/danh-sach-xe')" class="px-8 py-4 bg-primary text-on-primary rounded-xl font-label-md text-label-md shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1 active:translate-y-0">
                             Thuê ngay
                         </button>
                     </div>
                 </div>
-                <!-- Glassmorphism Search Bar -->
-                <div class="mt-16 w-full max-w-4xl glass-effect border border-white/40 p-lg rounded-[24px] shadow-2xl flex flex-col md:flex-row gap-lg items-end">
-                    <div class="flex-1 space-y-2 w-full">
-                        <label class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
-                            <span class="material-symbols-outlined text-[18px]">location_on</span> Địa điểm
-                        </label>
-                        <input class="w-full h-12 px-4 rounded-xl border border-outline-variant bg-white/50 focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-outline" placeholder="Bạn muốn nhận xe ở đâu?" type="text"/>
-                    </div>
-                    <div class="flex-1 space-y-2 w-full">
-                        <label class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
-                            <span class="material-symbols-outlined text-[18px]">calendar_today</span> Ngày nhận &amp; trả
-                        </label>
-                        <input class="w-full h-12 px-4 rounded-xl border border-outline-variant bg-white/50 focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-outline" placeholder="Chọn thời gian" type="text"/>
-                    </div>
-                    <div class="flex-1 space-y-2 w-full">
-                        <label class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
-                            <span class="material-symbols-outlined text-[18px]">motorcycle</span> Loại xe
-                        </label>
-                        <select class="w-full h-12 px-4 rounded-xl border border-outline-variant bg-white/50 focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-on-surface appearance-none">
-                            <option>Tất cả các loại</option>
-                            <option>Xe tay ga</option>
-                            <option>Xe số</option>
-                            <option>Xe côn tay</option>
-                            <option>Xe điện</option>
-                        </select>
-                    </div>
-                    <button class="h-12 w-full md:w-auto px-10 bg-primary text-on-primary rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-primary-container transition-all">
-                        <span class="material-symbols-outlined">search</span> Tìm xe
-                    </button>
-                </div>
+
             </div>
         </section>
         <!-- 3. Categories -->
@@ -98,109 +69,36 @@
                         <h2 class="text-headline-lg font-headline-lg text-on-surface">Xe nổi bật</h2>
                         <p class="text-body-md font-body-md text-on-surface-variant mt-2">Lựa chọn hàng đầu từ cộng đồng lái xe</p>
                     </div>
-                    <a class="text-primary font-label-md text-label-md flex items-center gap-2 hover:underline" href="#">
+                    <router-link class="text-primary font-label-md text-label-md flex items-center gap-2 hover:underline" to="/danh-sach-xe">
                         Xem tất cả <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </a>
+                    </router-link>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
-                    <!-- Bike Card 1 -->
-                    <div class="bg-white rounded-[16px] overflow-hidden border border-outline-variant/30 hover-lift group">
-                        <div class="h-56 relative overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A side view of a high-end white 2026 Honda SH160i scooter, parked against a minimalist urban concrete wall. The lighting is soft and neutral, highlighting the glossy finish and premium leather seat. The image is clean, modern, and perfectly suited for a premium rental listing, showing every detail of the bike's design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI8uQG2rHFBowsfOHeqrR_vOARPaBZQPneRzU4d5dXSBxcIVHTw633XO4BBXzBXsqq-eUo-B2UhUM51azW2ZsDIxnb7EShoxJEhP7GtYhZnHomMtmyJhmbzwC-IcXO8PFq1jFfCe678D-WypqRJlb9RXzw0q99zNBAmfNOXME2oBiKkkrUmT76mfsTVJrX7929fzB274QVpQePcvg41RaQF_egNbfqPD_Tuf746jpFZ_BiGdKTw1etZvAlrsmiawmk7KJdXOXF2Yj2"/>
-                            <div class="absolute top-4 left-4 px-3 py-1 bg-green-100 text-green-700 text-label-sm font-label-sm rounded-full flex items-center gap-1">
-                                <span class="w-2 h-2 rounded-full bg-green-500">
-                                </span> Available
-                            </div>
-                        </div>
-                        <div class="p-lg space-y-4">
-                            <div>
-                                <h3 class="text-title-lg font-title-lg text-on-surface">Honda SH 160i 2026</h3>
-                                <p class="text-label-sm font-label-sm text-on-surface-variant">Tay ga | 160cc</p>
-                            </div>
-                            <div class="flex justify-between items-center border-t border-outline-variant/20 pt-4">
-                                <div>
-                                    <span class="text-primary font-bold text-title-lg">250.000đ</span>
-                                    <span class="text-label-sm font-label-sm text-on-surface-variant">/ngày</span>
+                    <!-- Dynamic Bike Card -->
+                    <div v-for="bike in featuredVehicles" :key="bike.ma_xe || bike.id" class="bg-white rounded-[16px] overflow-hidden border border-outline-variant/30 hover-lift group flex flex-col justify-between">
+                        <div>
+                            <div class="h-56 relative overflow-hidden bg-surface-container">
+                                <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" :src="bike.hinh_anh || 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=400&q=80'" :alt="bike.ten_xe"/>
+                                <div class="absolute top-4 left-4 px-3 py-1 text-label-sm font-label-sm rounded-full flex items-center gap-1" :class="[bike.tinh_trang_xe === 'SanSang' || bike.tinh_trang_xe === 'Sẵn Sàng' ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700']">
+                                    <span class="w-2 h-2 rounded-full" :class="[bike.tinh_trang_xe === 'SanSang' || bike.tinh_trang_xe === 'Sẵn Sàng' ? 'bg-green-500' : 'bg-orange-500']"></span> 
+                                    {{ bike.tinh_trang_xe === 'SanSang' || bike.tinh_trang_xe === 'Sẵn Sàng' ? 'Sẵn sàng' : 'Đang bận' }}
                                 </div>
                             </div>
-                            <button class="w-full py-3 bg-surface-container text-primary font-label-md text-label-md rounded-xl hover:bg-primary hover:text-on-primary transition-all duration-200">
-                                Xem chi tiết
-                            </button>
-                        </div>
-                    </div>
-                    <!-- Bike Card 2 -->
-                    <div class="bg-white rounded-[16px] overflow-hidden border border-outline-variant/30 hover-lift group">
-                        <div class="h-56 relative overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A sleek navy blue Yamaha Exciter 155 VVA under-bone motorbike, captured in a dynamic 3/4 front view. Set in a modern city street at night with soft neon light reflections on the pavement. The bike is clean, polished, and represents high performance for city travelers. High-quality photography with shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8RwVgFzFg4YWGG1udhosyYtRMzjGR7kihj2MHYaWxZbVno3IAapgrRk8j1pTCWU46QotAfd4qNg8s9aGMmN1MUBJFGYc4ZnSAo2dUJI6tWFNhd1TivCvDndvze26YUCALhmP08Aj9T81Io7ioSBbH_SpKIJaJMKF1a4tnIR7iQUflCwhLNLjnuYYS6kdkzHyqfAfN0A1dVds-GfhYxRvw_qPV4vazhYVaL83Wh2g6PBb9gIgU4M6mIj8Mkg3oE1b3mzbqyPAWOgqp"/>
-                            <div class="absolute top-4 left-4 px-3 py-1 bg-green-100 text-green-700 text-label-sm font-label-sm rounded-full flex items-center gap-1">
-                                <span class="w-2 h-2 rounded-full bg-green-500">
-                                </span> Available
-                            </div>
-                        </div>
-                        <div class="p-lg space-y-4">
-                            <div>
-                                <h3 class="text-title-lg font-title-lg text-on-surface">Yamaha Exciter 155</h3>
-                                <p class="text-label-sm font-label-sm text-on-surface-variant">Xe côn | 155cc</p>
-                            </div>
-                            <div class="flex justify-between items-center border-t border-outline-variant/20 pt-4">
-                                <div>
-                                    <span class="text-primary font-bold text-title-lg">180.000đ</span>
-                                    <span class="text-label-sm font-label-sm text-on-surface-variant">/ngày</span>
+                            <div class="p-lg space-y-2">
+                                <h3 class="text-title-lg font-title-lg text-on-surface truncate">{{ bike.ten_xe }}</h3>
+                                <p class="text-label-sm font-label-sm text-on-surface-variant">{{ bike.danh_muc_xe ? bike.danh_muc_xe.ten_danh_muc : 'Xe máy' }} | {{ bike.mau_sac || 'N/A' }}</p>
+                                <div class="flex justify-between items-center border-t border-outline-variant/20 pt-4 mt-2">
+                                    <div>
+                                        <span class="text-primary font-bold text-title-lg">{{ Number(bike.gia_thue_ngay).toLocaleString('vi-VN') }}đ</span>
+                                        <span class="text-label-sm font-label-sm text-on-surface-variant">/ngày</span>
+                                    </div>
                                 </div>
                             </div>
-                            <button class="w-full py-3 bg-surface-container text-primary font-label-md text-label-md rounded-xl hover:bg-primary hover:text-on-primary transition-all duration-200">
+                        </div>
+                        <div class="p-lg pt-0">
+                            <router-link :to="`/chi-tiet-xe?id=${bike.ma_xe || bike.id}`" class="w-full py-3 bg-surface-container text-primary font-label-md text-label-md rounded-xl hover:bg-primary hover:text-on-primary transition-all duration-200 block text-center text-decoration-none">
                                 Xem chi tiết
-                            </button>
-                        </div>
-                    </div>
-                    <!-- Bike Card 3 -->
-                    <div class="bg-white rounded-[16px] overflow-hidden border border-outline-variant/30 hover-lift group">
-                        <div class="h-56 relative overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A modern VinFast Evo200 Lite electric scooter in bright orange, parked in a lush green park setting with natural morning sunlight filtering through trees. The image highlights the eco-friendly and stylish nature of the vehicle. The overall mood is fresh, energetic, and clean-mode friendly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5GlcNNDIxqZo1M0AnHKS4xNNr6-Y1Roq0JIjcy55j4-DW-PsZacgReZcylba9fRoH18IifIsZPEkQooXfzcH4yGGece3Yq1GRALQFhIp1z5AM4GoFafVRWzQ0MrV5oIXNSnZ4aUjhebZg6RhdVWuE9ikR5G4zy6B0tx5RAD9_MgOYcvSv4SlhnD97aozP5LBgCCoZhPO9NNnjkXtbZ31LAoKidhejAYzYP5i2bAPjPsoYvOUG7V8dOk7QGfnSP_kzE5QyBPnCqFIy"/>
-                            <div class="absolute top-4 left-4 px-3 py-1 bg-green-100 text-green-700 text-label-sm font-label-sm rounded-full flex items-center gap-1">
-                                <span class="w-2 h-2 rounded-full bg-green-500">
-                                </span> Available
-                            </div>
-                        </div>
-                        <div class="p-lg space-y-4">
-                            <div>
-                                <h3 class="text-title-lg font-title-lg text-on-surface">VinFast Evo200</h3>
-                                <p class="text-label-sm font-label-sm text-on-surface-variant">Xe điện | 70km/h</p>
-                            </div>
-                            <div class="flex justify-between items-center border-t border-outline-variant/20 pt-4">
-                                <div>
-                                    <span class="text-primary font-bold text-title-lg">120.000đ</span>
-                                    <span class="text-label-sm font-label-sm text-on-surface-variant">/ngày</span>
-                                </div>
-                            </div>
-                            <button class="w-full py-3 bg-surface-container text-primary font-label-md text-label-md rounded-xl hover:bg-primary hover:text-on-primary transition-all duration-200">
-                                Xem chi tiết
-                            </button>
-                        </div>
-                    </div>
-                    <!-- Bike Card 4 -->
-                    <div class="bg-white rounded-[16px] overflow-hidden border border-outline-variant/30 hover-lift group">
-                        <div class="h-56 relative overflow-hidden">
-                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A vintage-style Honda Super Cub C125 in pearl blue and cream, showcased in a trendy urban cafe district. The image emphasizes nostalgia combined with modern technology. The lighting is bright and airy, with soft shadows and a high-end commercial photography feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwOy_5Ch0WH-nUitPgPsd68WMxESQcVDiVt6LC3fTG9xj5oWWbMYl4E1yOmsPny5j8ITyT4SpXzmvdohnkVs1ZNIzfjBWcyrDdBP3m4ZC5mfD5jyO-G2uHNNC_cti3OOeqIFr5h_AJPXa5mX7mlgJEITva66NfiZNpkY8JToW_jIwGFMUvZekIsBjhcgyVNGRd8sENlAPdnTE64GUj-3VSzFW71nt9dsqA7M6T9qyLpXsUws0de6KNVrLCgMUwf_3N4KGGyLcQOMD_"/>
-                            <div class="absolute top-4 left-4 px-3 py-1 bg-green-100 text-green-700 text-label-sm font-label-sm rounded-full flex items-center gap-1">
-                                <span class="w-2 h-2 rounded-full bg-green-500">
-                                </span> Available
-                            </div>
-                        </div>
-                        <div class="p-lg space-y-4">
-                            <div>
-                                <h3 class="text-title-lg font-title-lg text-on-surface">Honda Super Cub C125</h3>
-                                <p class="text-label-sm font-label-sm text-on-surface-variant">Xe số | 125cc</p>
-                            </div>
-                            <div class="flex justify-between items-center border-t border-outline-variant/20 pt-4">
-                                <div>
-                                    <span class="text-primary font-bold text-title-lg">200.000đ</span>
-                                    <span class="text-label-sm font-label-sm text-on-surface-variant">/ngày</span>
-                                </div>
-                            </div>
-                            <button class="w-full py-3 bg-surface-container text-primary font-label-md text-label-md rounded-xl hover:bg-primary hover:text-on-primary transition-all duration-200">
-                                Xem chi tiết
-                            </button>
+                            </router-link>
                         </div>
                     </div>
                 </div>
@@ -272,6 +170,17 @@
                         <div class="flex gap-1">
                             <span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
                             <span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-yellow-400" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="text-body-md text-on-surface-variant">Dịch vụ cho thuê xe vô cùng chuyên nghiệp. Xe tay ga chạy êm ái, đầy xăng và mũ bảo hiểm sạch sẽ. Sẽ tiếp tục ủng hộ khi quay lại Hà Nội!</p>
+                        <div class="flex items-center gap-md">
+                            <div class="w-10 h-10 rounded-full bg-primary-container text-primary font-bold flex items-center justify-center text-label-md">KH</div>
+                            <div>
+                                <h5 class="font-bold text-on-surface text-label-md">Nguyễn Hoàng Nam</h5>
+                                <p class="text-xs text-outline">Khách hàng thuê xe ga</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -281,8 +190,32 @@
 </template>
 
 <script>
+import { api } from '../../services/api';
+
 export default {
-    name: 'LandingPage'
+    name: 'LandingPage',
+    data() {
+        return {
+            vehicles: [],
+            loading: false,
+        };
+    },
+    computed: {
+        featuredVehicles() {
+            // Get up to 4 motorbikes to feature on landing page
+            return this.vehicles.slice(0, 4);
+        }
+    },
+    async mounted() {
+        this.loading = true;
+        try {
+            this.vehicles = await api.get('/xe-may');
+        } catch (error) {
+            console.error('Lỗi tải danh sách xe:', error);
+        } finally {
+            this.loading = false;
+        }
+    }
 }
 </script>
 

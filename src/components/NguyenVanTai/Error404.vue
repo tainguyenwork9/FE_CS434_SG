@@ -42,12 +42,12 @@
         <footer class="w-full py-xl px-gutter flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant/20">
             <div class="flex flex-col items-center md:items-start gap-xs mb-md md:mb-0">
                 <span class="font-title-lg text-title-lg font-bold text-on-surface">MotoRent Pro</span>
-                <p class="font-body-md text-body-md text-on-surface-variant">© 2026 MotoRent Pro. All rights reserved.</p>
+                <p class="font-body-md text-body-md text-on-surface-variant">© 2026 MotoRent Pro. Bảo lưu mọi quyền.</p>
             </div>
             <div class="flex flex-wrap justify-center gap-lg">
-                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Terms of Service</a>
-                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Privacy Policy</a>
-                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Contact Support</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Điều khoản dịch vụ</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Chính sách bảo mật</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Liên hệ hỗ trợ</a>
             </div>
         </footer>
     </div>
